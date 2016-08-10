@@ -1,0 +1,26 @@
+<div class="pull-left">
+    <a href="#/marvel/comics" class="card-title">Marvel Comics</a>
+</div>
+<div class="pull-left">
+    <a href="#/marvel/characters" class="card-title">Marvel Characters</a>
+</div>
+
+<br>
+<!--<div id="content">-->
+    <h2>Characters</h2>
+
+    <div id="characters" class="results">
+        <article class="card" ng-repeat="character in characters.$$state.value">
+            <img src="{{ character.thumbnail.path }}/portrait_incredible.jpg" alt="{{ character.name }} thumbnail">
+            <footer>
+                <h5>
+                    {{ character.name }}
+                    <!--<a href="{{ getCharacterURL($char) }}" class="card-title"></a>-->
+                </h5>
+            </footer>
+        </article>
+    </div>
+    <!--<div id="pagination">-->
+        <!--{{ $paginated_results->setPath('characters')->render() }}-->
+    <!--</div>-->
+<!--</div>-->

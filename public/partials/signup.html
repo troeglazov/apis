@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h2>Signup</h2>
+        <p>Welcome! If you want to sign up to our awesome service, fill this form and press on "Signup"!</p>
+
+        <hr>
+
+        <form name="userForm" ng-submit="signup()" novalidate>
+
+            <!-- NAME -->
+            <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Username..." ng-model="name" required>
+                <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Email..." ng-model="email">
+                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+                <label>Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Password..." ng-model="password" required />
+            </div>
+
+            <hr>
+
+            <button type="submit" class="btn btn-success form-control" ng-disabled="userForm.$invalid">Signup</button>
+
+            <hr>
+
+        </form>
+
+        <p><a href="#login">Already signed up? <b>Log in!</b></a></p>
+    </div>
+</div>

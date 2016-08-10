@@ -1,0 +1,29 @@
+<div class="pull-left">
+    <a href="#/marvel/comics" class="card-title">Marvel Comics</a>
+</div>
+<div class="pull-left">
+    <a href="#/marvel/characters" class="card-title">Marvel Characters</a>
+</div>
+
+<br>
+
+<div style="text-align: center">
+    <strong><p>20 Random Comics</p></strong>
+</div>
+
+<div id="comics" class="results">
+    <article ng-repeat="comic in comics.$$state.value" class="card">
+        <img src="{{ comic.images[0].path }}/portrait_incredible.jpg" alt="{{ comic.title }} thumbnail">
+        <footer>
+            <h5>
+                <a href="/comics/{{ comic.id }}" class="card-title">{{ comic.title }}</a>
+            </h5>
+            <p>
+                <!--@todo change it to more beautiful solution-->
+                {{ comic.description | limitTo: 160 }} {{longString.length < 160 ? '' : '...'}}
+            </p>
+        </footer>
+
+    </article>
+</div>
+
