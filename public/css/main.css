@@ -23,6 +23,10 @@
     height: 450px;
 }
 
+.menu-padding {
+    padding-right: 10px
+}
+
 .card p {
     font-size: 15px;
     color: #676767;

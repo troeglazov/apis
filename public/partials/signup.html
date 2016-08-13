@@ -5,26 +5,26 @@
 
         <hr>
 
-        <form name="userForm" ng-submit="signup()" novalidate>
+        <form name="userForm" ng-submit="SignupCtrl.signup()" novalidate>
 
             <!-- NAME -->
             <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
                 <label>Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Username..." ng-model="name" required>
+                <input type="text" name="name" class="form-control" placeholder="Username..." ng-model="SignupCtrl.name" required>
                 <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
             </div>
 
             <!-- EMAIL -->
             <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
                 <label>Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Email..." ng-model="email">
+                <input type="email" name="email" class="form-control" placeholder="Email..." ng-model="SignupCtrl.email">
                 <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
             </div>
 
             <!-- PASSWORD -->
             <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
                 <label>Password</label>
-            <input type="password" name="password" class="form-control" placeholder="Password..." ng-model="password" required />
+            <input type="password" name="password" class="form-control" placeholder="Password..." ng-model="SignupCtrl.password" required />
             </div>
 
             <hr>

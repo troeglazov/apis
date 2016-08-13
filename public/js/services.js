@@ -1,8 +1,8 @@
-var MarvelAppServices = angular.module('MarvelAppServices', [
+var MainAppServices = angular.module('MainAppServices', [
     'LocalStorageModule'
 ]);
 
-MarvelAppServices.factory('userService', ['$http', 'localStorageService', function($http, localStorageService) {
+MainAppServices.factory('userService', ['$http', 'localStorageService', function($http, localStorageService) {
 
     function checkIfLoggedIn() {
         var value = false;
@@ -69,13 +69,14 @@ MarvelAppServices.factory('userService', ['$http', 'localStorageService', functi
     }
 }]);
 
-MarvelAppServices.factory('marvelService', ['$http', function($http) {
+MainAppServices.factory('marvelService', ['$http', function($http) {
 
     function getComics() {
         return $http.get('api/comics', {params:{shuffle: true}}).then(function(response) {
             return response.data;
         });
     }
+
     function getCharacters() {
         return $http.get('api/characters').then(function(response) {
             return response.data;
